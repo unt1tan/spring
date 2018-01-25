@@ -7,9 +7,9 @@ public class Test {
 	public static void main(String[] args) {
 		BeanFactory factory = new BeanFactory();
 
-		factory.register(UserService.class.getName(), new UserService());
+		factory.register(HelloService.class.getName(), new HelloService());
 
-		UserService bean = (UserService) factory.getBean(UserService.class.getName());
+		HelloService bean = (HelloService) factory.getBean(HelloService.class.getName());
 
 		bean.helloworld("titan");
 	}
