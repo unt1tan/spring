@@ -1,4 +1,4 @@
-package test;
+package cn.titan.test;
 
 import cn.titan.spring.BeanDefine;
 import cn.titan.spring.PropertyValue;

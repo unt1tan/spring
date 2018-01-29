@@ -1,4 +1,4 @@
-package test;
+package cn.titan.test;
 
 public class HelloService {
 	private String name;
