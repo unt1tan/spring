@@ -1,0 +1,3 @@
+4.step4-读取xml配置来初始化bean
+step-4-config-beanfactory-with-xml
+用xml来初始化吧。我们定义了BeanDefinitionReader初始化bean，它有一个实现是XmlBeanDefinitionReader。
