@@ -1,6 +1,7 @@
 package cn.titan.spring.reader.xml;
 
 import cn.titan.spring.bean.BeanDefinition;
+import cn.titan.spring.bean.BeanReference;
 import cn.titan.spring.bean.PropertyValue;
 import cn.titan.spring.reader.AbstractBeanDefinitionReader;
 import cn.titan.spring.reader.io.Resource;
@@ -51,8 +52,13 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 							Element propertyEle = (Element) ele;
 							String propertyName = propertyEle.getAttribute("name");
 							String propertyValue = propertyEle.getAttribute("value");
-
-							bean.getPropertyValues().addPropertyValue(new PropertyValue(propertyName, propertyValue));
+							String propertyRef = propertyEle.getAttribute("ref");
+							if (propertyRef != null && propertyRef.length() > 0) {
+								BeanReference ref = new BeanReference(propertyRef);
+								bean.getPropertyValues().addPropertyValue(new PropertyValue(propertyName, ref));
+							} else {
+								bean.getPropertyValues().addPropertyValue(new PropertyValue(propertyName, propertyValue));
+							}
 						}
 					}
 					getRegistry().put(name, bean);
