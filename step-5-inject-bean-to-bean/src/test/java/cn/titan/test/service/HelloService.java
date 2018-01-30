@@ -1,9 +1,9 @@
-package cn.titan.test;
+package cn.titan.test.service;
 
-public class WorldService {
+public class HelloService {
 	private String name;
 	private String text;
-	private HelloService service;
+	private WorldService service;
 
 	public void helloworld() {
 		System.out.println(name + " : " + text);
@@ -17,7 +17,7 @@ public class WorldService {
 		this.text = text;
 	}
 
-	public HelloService getService() {
+	public WorldService getService() {
 		return service;
 	}
 }

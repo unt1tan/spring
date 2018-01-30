@@ -5,6 +5,8 @@ import cn.titan.spring.factory.AbstractBeanFactory;
 import cn.titan.spring.factory.AutowireBeanFactory;
 import cn.titan.spring.reader.io.ResourceLoader;
 import cn.titan.spring.reader.xml.XmlBeanDefinitionReader;
+import cn.titan.test.service.HelloService;
+import cn.titan.test.service.WorldService;
 
 import java.util.Map;
 
@@ -14,21 +16,16 @@ public class Test {
 		// 加载xml
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(new ResourceLoader());
 		reader.loadBeanDefinitions("spring.xml");
-
 		// 注册bean不实例化
 		AbstractBeanFactory factory = new AutowireBeanFactory();
 		for (Map.Entry<String, BeanDefinition> entry : reader.getRegistry().entrySet()) {
-			System.out.println(entry.getKey() + "\t" + entry.getValue());
 			factory.registry(entry.getKey(), entry.getValue());
 		}
-
 		// 实例化bean
 		factory.preInstancesingletons();
-
 		// 调用
 		HelloService hello = (HelloService) factory.getBean("helloService");
 		hello.getService().helloworld();
-
 		WorldService world = (WorldService) factory.getBean("worldService");
 		world.getService().helloworld();
 	}
