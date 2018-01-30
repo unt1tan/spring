@@ -1,5 +1,5 @@
 # spring
-简单实现spring的ioc和aop基础功能
+简单实现spring的ioc基础功能
 
 # IoC容器
 
