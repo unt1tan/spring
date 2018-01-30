@@ -1,0 +1,4 @@
+6.step6-ApplicationContext登场
+step-6-invite-application-context
+先加载xml中的所有bean，全部加载后再进行bean的实例化
+现在BeanFactory的功能齐全了，但是使用起来有点麻烦。于是我们引入熟悉的ApplicationContext接口，并在AbstractApplicationContext的refresh()方法中进行bean的初始化工作。

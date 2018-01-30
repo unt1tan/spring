@@ -1,0 +1,5 @@
+5.step5-为bean注入bean
+step-5-inject-bean-to-bean
+使用xml配置之后，似乎里我们熟知的Spring更近了一步！
+但是现在有一个问题没有解决：我们无法处理bean之间的依赖，无法将bean注入到bean中，所以它无法称之为完整的IoC容器！
+如何实现呢？我们定义一个BeanReference，来表示这个属性是对另一个bean的引用。这个在读取xml的时候初始化，并在初始化bean的时候，进行解析和真实bean的注入。
