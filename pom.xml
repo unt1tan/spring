@@ -15,7 +15,6 @@
         <module>step-4-config-beanfactory-with-xml</module>
         <module>step-5-inject-bean-to-bean</module>
         <module>step-6-invite-application-context</module>
-        <module>step-7-method-interceptor-by-jdk-dynamic-proxy</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
