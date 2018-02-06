@@ -98,8 +98,8 @@ for (PropertyValue propertyValue : mbd.getPropertyValues().getPropertyValues()) 
     declaredField.setAccessible(true);
     Object value = propertyValue.getValue();
     if (value instanceof BeanReference) {
-        **BeanReference beanReference = (BeanReference) value;
-        value = getBean(beanReference.getName());**
+        BeanReference beanReference = (BeanReference) value;
+        value = getBean(beanReference.getName());
     }
     declaredField.set(bean, value);
 }
